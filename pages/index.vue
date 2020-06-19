@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div>
+      {{ fuga }}
       <logo />
       <h1 class="title">
         hoge
@@ -27,12 +28,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Logo from '~/components/Logo.vue'
-
+const fuga: () => number = () => 22
 export default {
   components: {
     Logo,
+  },
+  data() {
+    return { fuga: fuga() }
   },
 }
 </script>
